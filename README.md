@@ -35,7 +35,6 @@ The solutions are organized by difficulty and topic:
 
 ## 🤝 Connect with Me
 - **GitHub:** [@Die-Another-Day](https://github.com/Die-Another-Day)
-- **LeetCode:** [https://leetcode.com/u/jPp2sAr8Ng]
-
+- **LeetCode:** [[@Eeshan](https://leetcode.com/u/jPp2sAr8Ng/)]
 ---
 *“Consistency is the key to mastery.”*
