@@ -1,34 +1,63 @@
-name: Auto-Update README
-name: Update README
+# ──────────────────────────────────────────────────────────────────
+# .github/workflows/update_readme.yml
+#
+# Automatically regenerates the root README.md whenever a solution
+# is pushed to main.  Also runs on a daily schedule as a safety net.
+# ──────────────────────────────────────────────────────────────────
+
+name: 📊 Auto-Update README
+
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+    paths:
+      - "problems/**"          # only trigger when solutions change
   schedule:
-    - cron: '0 0 * * *'   # Runs daily at 00:00 UTC
-  workflow_dispatch:       # Allows manual trigger
+    - cron: "0 0 * * *"        # daily at 00:00 UTC as a safety net
+  workflow_dispatch:           # allow manual trigger from the Actions tab
+
+permissions:
+  contents: write              # needed to push the updated README
 
 jobs:
   update-readme:
+    name: Regenerate solution log & dashboard
     runs-on: ubuntu-latest
 
     steps:
+      # ── 1. Checkout full history (needed for accurate file mtimes) ──
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python
+      # ── 2. Restore real file mtimes from git history ────────────────
+      #    Without this, every file appears to have the same checkout time.
+      - name: Restore file modification times
+        run: |
+          git ls-files | while read -r file; do
+            ts=$(git log -1 --format="%ct" -- "$file")
+            if [ -n "$ts" ]; then
+              touch -t "$(date -d "@$ts" +"%Y%m%d%H%M.%S")" "$file"
+            fi
+          done
+
+      # ── 3. Set up Python ────────────────────────────────────────────
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - name: Run update script
+      # ── 4. Run the update script ────────────────────────────────────
+      - name: Run update_readme.py
         run: python scripts/update_readme.py
 
-      - name: Commit and push if changed
+      # ── 5. Commit & push only if README actually changed ────────────
+      - name: Commit changes
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "📊 Auto-update solution log"
+          git diff --staged --quiet && echo "No changes to commit." || \
+            git commit -m "📊 chore: auto-update solution log [skip ci]"
           git push
