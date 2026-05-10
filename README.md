@@ -9,9 +9,9 @@
 
 ---
 
-[![Auto Update](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/update_readme.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=Auto%20Update&color=22c55e)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/update_readme.yml)
+[![Auto Update](https://img.shields.io/github/actions/workflow/status/Die-Another-Day/Leetcode-Solutions/update_readme.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=Auto%20Update&color=22c55e)](https://github.com/Die-Another-Day/Leetcode-Solutions/actions/workflows/update_readme.yml)
 [![Language](https://img.shields.io/badge/Primary-Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com)
-[![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/YOUR_REPO?style=for-the-badge&label=Last%20Solved&color=6366f1)](https://github.com/YOUR_USERNAME/YOUR_REPO/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/Die-Another-Day/Leetcode-Solutions?style=for-the-badge&label=Last%20Solved&color=6366f1)](https://github.com/Die-Another-Day/Leetcode-Solutions/commits/main)
 [![License](https://img.shields.io/badge/License-MIT-94a3b8?style=for-the-badge)](LICENSE)
 
 </div>
@@ -156,38 +156,15 @@ Explain your approach here.
 ### 1 — Fork / clone this repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/Die-Another-Day/Leetcode-Solutions
+cd Leetcode-Solutions
 ```
 
 ### 2 — Update the badge URLs in this README
 
-Replace every `YOUR_USERNAME/YOUR_REPO` with your actual GitHub username and repo name.
-
-### 3 — Ensure Actions has write permission
-
-`Settings → Actions → General → Workflow permissions → Read and write permissions ✅`
-
-### 4 — Add your first solution
-
-```bash
-mkdir -p problems/0001-two-sum
-# drop in Solution.java + README.md
-git add problems/0001-two-sum
-git commit -m "✅ 0001 · Two Sum"
-git push
-```
-
-The workflow fires automatically. The README updates itself within ~30 seconds.
-
-### 5 — (Optional) Run the script locally
-
-```bash
-python scripts/update_readme.py
-```
+Replace every `Die-Another-Day/Leetcode-Solutions` with your actual GitHub username and repo name.
 
 ---
-
 <div align="center">
 
 Made with consistency &nbsp;·&nbsp; MIT License
