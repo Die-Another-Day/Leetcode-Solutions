@@ -76,12 +76,12 @@ No manual editing required — ever.
 | Metric | Count |
 |:-------|------:|
 | 🟢 Easy   | **0** |
-| 🟡 Medium | **0** |
+| 🟡 Medium | **1** |
 | 🔴 Hard   | **0** |
-| ⭐ **Total Solved** | **0** |
+| ⭐ **Total Solved** | **1** |
 
-**Difficulty distribution:** `────────────────────────────────────────`
-> 🟢 Easy · 🟡 Medium · 🔴 Hard
+**Difficulty distribution:** `▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓`
+> 🟢 Easy &nbsp;·&nbsp; 🟡 Medium &nbsp;·&nbsp; 🔴 Hard
 <!-- DASHBOARD:END -->
 
 ---
@@ -91,7 +91,7 @@ No manual editing required — ever.
 <!-- LOG:START -->
 | # | Problem | Difficulty | Language | Solution | Date |
 |--:|:--------|:----------:|:--------:|:--------:|-----:|
-| — | *No solutions yet* | | | | |
+| 1 | [1914. Cyclically Rotating a Grid](https://leetcode.com/problems/cyclically-rotating-a-grid/) | 🟡 Medium | Java | [View](./problems/1914-cyclically-rotating-a-grid/Solution.java) | 09 May 2026 |
 <!-- LOG:END -->
 
 ---
